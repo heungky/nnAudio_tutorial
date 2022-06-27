@@ -2,9 +2,9 @@
 
 
 There are 3 part of tutorial:
-* [Part 1: Training a Linear model with nnAudio Trainable Basis Functions](#Part_1)
-* [Part 2: Evaluation with nnAudio Trainable Basis Functions](#Part_2)
-* [Part 3: Using nnAudio Trainable Basis Functions with others non-linear model](#Part_3)
+* [Part 1: Training a Linear model with nnAudio Trainable Basis Functions](#Part-1)
+* [Part 2: Evaluation with nnAudio Trainable Basis Functions](#Part-2)
+* [Part 3: Using nnAudio Trainable Basis Functions with others non-linear model](#Part-3)
 
 ## Part 1
 In part 1 tutorial, we will demonstrate how to utilise nnAudio trainable basis functions by using  Google speech commands dataset v2 with linear model in Key Word Spotting (KWS) task.
