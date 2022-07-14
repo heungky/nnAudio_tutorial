@@ -1,4 +1,5 @@
-# On-the-fly audio processing using nnAudio
+# Build a deep neural network for the keyword spotting (KWS) task with nnAudio GPU audio processing
+
 ### Step-by-step tutorial of how to use nnAudio to tackle the the keyword spotting (KWS) task
 
 
@@ -10,18 +11,20 @@ There are a total of 12 different output classes in this KWS task. We chose to w
 
 We use [AudioLoader](https://github.com/KinWaiCheuk/AudioLoader) to access the speechcommands 12 classes dataset.
 
-The tutorial below consists of four parts:
-* [Part 1: Making on-the-fly audio processing possible](#Part-1:-Making-on-the-fly-audio-processing-possible)
-* [Part 2: Training a Linear model with nnAudio Trainable Basis Functions](#Part-2:-Training-a-Linear-model-with-nnAudio-Trainable-Basis-Functions)
-* [Part 3: Evaluation with nnAudio Trainable Basis Functions](#Part-3:-Evaluation-with-nnAudio-Trainable-Basis-Functions)
-* [Part 4: Using nnAudio Trainable Basis Functions with more complex non-linear models](#Part-4:-Using-nnAudio-Trainable-Basis-Functions-with-more-complex-non-linear-models)
+Our tutorial is available via Towards Data Science, feel free to check it out [here](https://towardsdatascience.com/build-a-deep-neural-network-for-the-keyword-spotting-kws-task-with-nnaudio-gpu-audio-processing-95b50018aaa8)
 
-### Part 1: Making on-the-fly audio processing possible
-We will compare the processing time between nnAudio GPU and librosa.
+The tutorial below consists of four parts:
+* [Part 1: Loading the dataset & simple linear model](#Part-1:-Loading-the-dataset-&-simple-linear-model)
+* [Part 2: Training a Linear model with Trainable Basis Functions](#Part-2:-Training-a-Linear-model-with-Trainable-Basis-Functions)
+* [Part 3: Evaluation of the resulting model](#Part-3:-Evaluation-of-the-resulting-model)
+* [Part 4: Using more complex non-linear models](#Part-4:-Using-more-complex-non-linear-models)
+
+### Part 1: Loading the dataset & simple linear model
+In this tutorial, we will work with spectrograms while comparing the processing time between nnAudio GPU and librosa.
 
 The result shows librosa took 27 mins for one epoch, however **nnAudio GPU only took around 30s to finish one epoch** which is 54x faster than librosa!
 
-### Part 2: Training a Linear model with nnAudio Trainable Basis Functions
+### Part 2: Training a Linear model with Trainable Basis Functions
 We will demonstrate how to utilise nnAudio's trainable basis functions to build a powerful classifier.
 
 nnAudio can calculate different types of spectrograms such as short-time Fourier transform (STFT), Mel-spectrogram, and onstant-Q transform (CQT) by leveraging PyTorch and GPU processing. In this project, we opted to work with Mel-spectrograms
@@ -47,10 +50,10 @@ MelSpectrogram(sr=16000,
                verbose=True)
 ```
 
-### Part 3: Evaluation with nnAudio Trainable Basis Functions
+### Part 3: Evaluation of the resulting model
 We will evaluate the model performance and do visualization by using the trained model weight from tutorial 2.
 
-### Part 4: Using nnAudio Trainable Basis Functions with more complex non-linear models
+### Part 4: Using more complex non-linear models
 After following part 1–3 of the tutorial, you now have a big picture overview of how to use nnAudio with trainable basis functions.
 In this tutorial, Broadcasting-residual network (BC_ResNet) will be used for demonstration on how nnAudio is applied in more complex model.
 
@@ -63,10 +66,6 @@ In this tutorial, Broadcasting-residual network (BC_ResNet) will be used for dem
 1. For nnAudio documentation, you can refer to https://kinwaicheuk.github.io/nnAudio/index.html
 
 1. Heung, K. Y., Cheuk, K. W., & Herremans, D. (2022). [Understanding Audio Features via Trainable Basis Functions](https://arxiv.org/pdf/2204.11437.pdf). arXiv preprint arXiv:2204.11437. (Research article on trainable basis functions)
-
-
-
-
 
 
 
